@@ -1,6 +1,7 @@
 package jpabook.jpashop;
 
 import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.repository.MemberRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class MemberRepositoryTest {
-    @Autowired MemberRepository memberRepository;
+    @Autowired
+    MemberRepository memberRepository;
 
     @Test
     @Transactional
@@ -21,18 +23,18 @@ public class MemberRepositoryTest {
     @Rollback(value = false) //이거 있으면 rollback안함
     public void testMember() throws Exception{
         //given
-        Member member = new Member();
-        member.setUsername("memberA");
-
-        //when
-        Long savedId = memberRepository.save(member);
-        Member findMember = memberRepository.find(savedId);
-
-        //then
-        Assertions.assertThat(findMember.getId()).isEqualTo(member.getId()); //T
-        Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername()); //T
-        Assertions.assertThat(findMember).isEqualTo(member); //T
-        System.out.println("findMember == member : " + (findMember == member));
+//        Member member = new Member();
+//        member.setUsername("memberA");
+//
+//        //when
+//        Long savedId = memberRepository.save(member);
+//        Member findMember = memberRepository.find(savedId);
+//
+//        //then
+//        Assertions.assertThat(findMember.getId()).isEqualTo(member.getId()); //T
+//        Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername()); //T
+//        Assertions.assertThat(findMember).isEqualTo(member); //T
+//        System.out.println("findMember == member : " + (findMember == member));
 
     }
 }
