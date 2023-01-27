@@ -13,7 +13,8 @@ public class Address {
     private String zipcode;
 
     //JPA 위해 그냥 만들기만 해놓음, 쓰라고 만든건 아니여서 protected
-    protected Address() {}
+    protected Address() {
+    }
 
     public Address(String city, String street, String zipcode) {
         this.city = city;
