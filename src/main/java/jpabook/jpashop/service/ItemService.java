@@ -22,14 +22,12 @@ public class ItemService {
 
     @Transactional
     //변경감지 기능
-    public Item updateItem(Long itemId, Book param){
+    public void updateItem(Long itemId, String name,int price, int stockQuantity){
         Item findItem = itemRepository.findOne(itemId);
 //        findItem.change(price, name, stockQuantity); //실제로는 이런식으로 변경할 수 있게 해야함
-        findItem.setPrice(param.getPrice());
-        findItem.setName(param.getName());
-        findItem.setStockQuantity(param.getStockQuantity());
-
-        return findItem;
+        findItem.setPrice(price);
+        findItem.setName(name);
+        findItem.setStockQuantity(stockQuantity);
     }
 
     public List<Item> findItems(){
