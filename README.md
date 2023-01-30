@@ -1,7 +1,7 @@
 ### JAEHYUNSHOP
-
+![img.png](jaehyunshop.png)
 ## 📢 프로젝트 설명
-- 실전! 스프링 부트와 JPA 활용1 - 웹 애플리케이션 개발 강의를 수강하고</br>
+- 실전! 스프링 부트와 JPA 활용1 - 웹 애플리케이션 개발 </br>강의를 수강하고
 제작한 프로젝트 입니다.
 
 ## ⚙ 개발 환경
@@ -31,3 +31,4 @@
     - HTML, CSS, Javascript, Thymeleaf, JavaScript
 - 데이터베이스
     - H2 database
+
