@@ -1,5 +1,6 @@
 package jpabook.jpashop.service;
 
+import jpabook.jpashop.domain.item.Book;
 import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,18 @@ public class ItemService {
     @Transactional//얘는 저장되어야함
     public void saveItem(Item item){
         itemRepository.save(item);
+    }
+
+    @Transactional
+    //변경감지 기능
+    public Item updateItem(Long itemId, Book param){
+        Item findItem = itemRepository.findOne(itemId);
+//        findItem.change(price, name, stockQuantity); //실제로는 이런식으로 변경할 수 있게 해야함
+        findItem.setPrice(param.getPrice());
+        findItem.setName(param.getName());
+        findItem.setStockQuantity(param.getStockQuantity());
+
+        return findItem;
     }
 
     public List<Item> findItems(){
